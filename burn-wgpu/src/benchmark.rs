@@ -105,6 +105,7 @@ pub trait Benchmark<G: GraphicsApi> {
             // Register the duration
             durations.push(end - start);
         }
+        println!("duration {:?}", durations);
 
         BenchmarkResult { durations }
     }

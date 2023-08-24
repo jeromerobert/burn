@@ -232,6 +232,8 @@ async fn select_device<G: GraphicsApi>(
     device: &WgpuDevice,
 ) -> (wgpu::Device, wgpu::Queue, wgpu::AdapterInfo) {
     let adapter = select_adapter::<G>(device);
+    let i = adapter.get_info();
+    println!("Adapter used by Burn:\n{i:#?}");
     let limits = adapter.limits();
 
     let (device, queue) = adapter

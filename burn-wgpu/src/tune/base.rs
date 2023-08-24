@@ -188,6 +188,9 @@ where
 {
     tunables
         .iter()
-        .map(|tunable| tunable.benchmark.run(device))
+        .map(|tunable| {
+            println!("Tunnable: {}", tunable);
+            tunable.benchmark.run(device)
+        })
         .collect()
 }
